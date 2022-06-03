@@ -1,0 +1,18 @@
+#red_display {
+	background:#fff;
+	color:#822;
+	font-weight:bold;
+	padding:4px;
+}
+#green_display {
+	background:#fff;
+	color:#282;
+	font-weight:bold;
+	padding:4px;
+}
+#blue_display {
+	background:#fff;
+	color:#228;
+	font-weight:bold;
+	padding:4px;
+}

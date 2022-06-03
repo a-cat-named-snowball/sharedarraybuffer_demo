@@ -1,15 +1,28 @@
 <html>
 	<head>
+		<script>
+			const sab = new SharedArrayBuffer(3)
+
+			window.document.addEventListener('request_sab', request_sab, false)
+			function request_sab(e) {
+				e.detail.get_sab(sab)
+			}
+
+			// window.onmessage = function(e) {
+			// 	if(e.data.request_sab){
+			// 		if (!crossOriginIsolated) {
+			// 			console.error("Not Isolated, cannot give shared array buffer")
+			// 			return
+			// 		}
+			// 		console.log(sab)
+			// 	}
+			// }
+		</script>
 	</head>
 	<body>
 		<iframe src="iframe1.html"></iframe>
 		<iframe src="iframe2.html"></iframe>
 		<iframe src="iframe3.html"></iframe>
-		<script>
-			console.log(crossOriginIsolated)
-			if (crossOriginIsolated) {
-				console.log("Isolated")
-			}
-		</script>
+		
 	</body>
 </html>

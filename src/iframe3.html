@@ -5,10 +5,16 @@
 				background:#228;
 			}
 		</style>
+		<link rel="stylesheet" href="shared.css">
 	</head>
 	<body>
-
-		<script>
+		<div id="red_display"></div>
+		<div id="green_display"></div>
+		<div id="blue_display"></div>
+		<button id="btn">Increase</button>
+		<script type="module">
+			import {run} from "/shared_iframe.js"
+			run(2)
 		</script>
 	</body>
 </html>
