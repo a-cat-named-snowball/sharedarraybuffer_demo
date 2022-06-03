@@ -3,20 +3,13 @@
 		<script>
 			const sab = new SharedArrayBuffer(3)
 
+			// The iframes will request a reference to the shared array buffer
+			// This is where we give it to them
 			window.document.addEventListener('request_sab', request_sab, false)
 			function request_sab(e) {
 				e.detail.get_sab(sab)
 			}
 
-			// window.onmessage = function(e) {
-			// 	if(e.data.request_sab){
-			// 		if (!crossOriginIsolated) {
-			// 			console.error("Not Isolated, cannot give shared array buffer")
-			// 			return
-			// 		}
-			// 		console.log(sab)
-			// 	}
-			// }
 		</script>
 	</head>
 	<body>

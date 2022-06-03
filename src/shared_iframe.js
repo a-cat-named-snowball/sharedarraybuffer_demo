@@ -13,7 +13,9 @@ export function run(index){
 		sab = new Uint8Array(_sab) // Convert to a Uint8Array so we can use it
 	}
 
-	// Periodically update to be responsive to changes in the shared array buffer. This should be done with events, but for a demo about SharedArrayBuffers I think it's fine to poll.
+	// Periodically update to be responsive to changes in the
+	// shared array buffer. This should be done with events, but
+	// for a demo about SharedArrayBuffers I think it's fine to poll.
 	setInterval(()=>{
 		document.querySelector("#red_display").textContent = sab[0]
 		document.querySelector("#green_display").textContent = sab[1]
@@ -21,7 +23,8 @@ export function run(index){
 	},100)
 
 
-	// Button functionality.
+	// Button functionality. The iframe specifies it's index so we write
+	// to the correct place in the array
 	document.querySelector("#btn").onclick = e => {
 		sab[index] += 1
 	}
